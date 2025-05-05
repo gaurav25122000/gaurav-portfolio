@@ -1,42 +1,248 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Define some color variables for easier management */
+:root {
+  --primary-color: #005ea2; /* A slightly richer blue */
+  --primary-hover: #003e6e;
+  --secondary-color: #28a745; /* Keep the green for contrast */
+  --secondary-hover: #218838;
+  --accent-color: #ffc107; /* An accent yellow/gold */
+  --background-light: #f8f9fa; /* Slightly lighter background */
+  --text-color: #343a40; /* Darker grey text */
+  --section-bg: #ffffff;
+  --border-color: #e9ecef; /* Lighter border */
+  --shadow-color: rgba(0, 0, 0, 0.08);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Basic Reset / Defaults */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Use system fonts */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  background-color: var(--background-light);
+  color: var(--text-color);
 }
 
-@keyframes logo-spin {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Container */
+.portfolio-container {
+  max-width: 960px; /* Limit content width */
+  margin: 2rem auto; /* Center the container with some top/bottom margin */
+  padding: 0 1rem; /* Add padding on the sides */
+}
+
+/* Animation for sections fading in */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* General Section Styling */
+.section {
+  background-color: var(--section-bg);
+  padding: 2rem;
+  margin-bottom: 2rem; /* Space between sections */
+  border-radius: 8px; /* Slightly rounded corners */
+  box-shadow: 0 4px 12px var(--shadow-color); /* Softer shadow */
+  opacity: 0; /* Start hidden for animation */
+  animation: fadeIn 0.7s ease-out forwards; /* Apply fade-in animation */
+  /* Add delay for staggered effect if desired, e.g., using nth-child or JS */
 }
 
-.card {
-  padding: 2em;
+.section h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.read-the-docs {
-  color: #888;
+.section h3 {
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.section h4 {
+  color: #5a6268; /* Slightly lighter secondary heading */
+  margin-bottom: 0.3rem;
+  font-weight: normal;
+  font-style: italic;
+}
+
+ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+/* Home Section Specific */
+.home-section h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.home-section p {
+  font-size: 1.1em;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px; /* Slightly larger padding */
+  margin-right: 10px;
+  border-radius: 6px; /* Slightly more rounded */
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform transition */
+}
+
+.cta-button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+/* About Section Specific */
+.skills-container {
+  display: flex;
+  gap: 2rem; /* Space between technical and soft skills */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.skills-list {
+  flex: 1; /* Allow lists to grow */
+  min-width: 200px; /* Minimum width before wrapping */
+}
+
+.skills-list h4 {
+  margin-bottom: 0.8rem;
+  color: var(--primary-color);
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* Experience Section Specific */
+.job {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color); /* Separator line between jobs */
+}
+
+.job:last-child {
+  border-bottom: none; /* Remove border from the last job */
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.job-dates {
+  font-style: italic;
+  color: #6c757d; /* Bootstrap's text-muted color */
+  font-size: 0.9em;
+}
+
+/* Projects Section Specific */
+.project {
+  margin-bottom: 1.5rem;
+}
+
+.project h3 {
+  margin-bottom: 0.3rem;
+}
+
+/* Publications Section Specific */
+.publications-section li {
+  margin-bottom: 0.8rem;
+}
+
+/* Social Work Section Specific */
+.volunteer-role {
+  margin-bottom: 1.5rem;
+}
+
+/* Contact Section Specific */
+.contact-info p {
+  margin-bottom: 0.5rem;
+}
+
+.contact-form {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.contact-form h3 {
+  margin-bottom: 1rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ced4da; /* Standard input border color */
+  border-radius: 4px;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition for focus */
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 94, 162, 0.25); /* Focus ring like Bootstrap */
+  outline: none; /* Remove default outline */
+}
+
+.contact-form textarea {
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.contact-form button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform transition */
+}
+
+.contact-form button:hover {
+  background-color: var(--secondary-hover);
+  transform: translateY(-2px); /* Slight lift on hover */
 }
