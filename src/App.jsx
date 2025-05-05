@@ -1,4 +1,5 @@
 import React from 'react';
+import ThemeSwitcher from './components/ThemeSwitcher'; // Import the switcher
 import Home from './components/Home';
 import About from './components/About';
 import Experience from './components/Experience';
@@ -13,6 +14,8 @@ import './App.css'
 function App() {
   return (
     <div className="portfolio-container">
+            <ThemeSwitcher /> {/* Add the switcher component */}
+
       {/* You might want a Navbar component here later */}
       <main>
         <Home />

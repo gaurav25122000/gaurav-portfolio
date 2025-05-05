@@ -1,27 +1,14 @@
-/* Define some color variables for easier management */
-:root {
-  --primary-color: #005ea2; /* A slightly richer blue */
-  --primary-hover: #003e6e;
-  --secondary-color: #28a745; /* Keep the green for contrast */
-  --secondary-hover: #218838;
-  --accent-color: #ffc107; /* An accent yellow/gold */
-  --background-light: #f8f9fa; /* Slightly lighter background */
-  --text-color: #343a40; /* Darker grey text */
-  --section-bg: #ffffff;
-  --border-color: #e9ecef; /* Lighter border */
-  --shadow-color: rgba(0, 0, 0, 0.08);
-}
-
 /* Basic Reset / Defaults */
-body {
+/* Body styles are now primarily controlled by theme.css */
+/* body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Use system fonts */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
-  background-color: var(--background-light);
-  color: var(--text-color);
-}
+  background-color: var(--background-color); /* Use theme variable */
+  color: var(--text-color); /* Use theme variable */
+} */
 
 *,
 *::before,
@@ -50,7 +37,7 @@ body {
 
 /* General Section Styling */
 .section {
-  background-color: var(--section-bg);
+  background-color: var(--section-bg); /* Use theme variable */
   padding: 2rem;
   margin-bottom: 2rem; /* Space between sections */
   border-radius: 8px; /* Slightly rounded corners */
@@ -62,19 +49,19 @@ body {
 
 .section h2 {
   margin-top: 0;
-  color: var(--primary-color);
-  border-bottom: 2px solid var(--border-color);
+  color: var(--primary-color); /* Use theme variable */
+  border-bottom: 2px solid var(--border-color); /* Use theme variable */
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
 .section h3 {
-  color: var(--text-color);
+  color: var(--text-color); /* Use theme variable */
   margin-bottom: 0.5rem;
 }
 
 .section h4 {
-  color: #5a6268; /* Slightly lighter secondary heading */
+  color: var(--secondary-text-color); /* Use theme variable */
   margin-bottom: 0.3rem;
   font-weight: normal;
   font-style: italic;
@@ -90,19 +77,19 @@ li {
 }
 
 a {
-  color: var(--primary-color);
+  color: var(--primary-color); /* Use theme variable */
   text-decoration: none;
   transition: color 0.3s ease; /* Smooth color transition */
 }
 
 a:hover {
-  color: var(--primary-hover);
+  border-color: var(--primary-color); /* Use theme variable for hover (matches button hover) */
 }
 
 /* Home Section Specific */
 .home-section h1 {
   font-size: 2.5em;
-  color: #333;
+  color: var(--text-color); /* Use theme variable */
   margin-bottom: 1rem;
 }
 
@@ -112,8 +99,8 @@ a:hover {
 }
 
 .cta-button {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: var(--primary-color); /* Use theme variable */
+  color: var(--button-text); /* Use theme variable (might need adjustment if primary bg clashes) */
   border: none;
   padding: 12px 24px; /* Slightly larger padding */
   margin-right: 10px;
@@ -124,7 +111,7 @@ a:hover {
 }
 
 .cta-button:hover {
-  background-color: var(--primary-hover);
+  /* Hover handled by button:hover in theme.css (border color change) */
   transform: translateY(-2px); /* Slight lift on hover */
   box-shadow: 0 2px 5px var(--shadow-color);
 }
@@ -142,7 +129,7 @@ a:hover {
 
 .skills-list h4 {
   margin-bottom: 0.8rem;
-  color: var(--primary-color);
+  color: var(--primary-color); /* Use theme variable */
   font-style: normal;
   font-weight: bold;
 }
@@ -162,7 +149,7 @@ a:hover {
 
 .job-dates {
   font-style: italic;
-  color: #6c757d; /* Bootstrap's text-muted color */
+  color: var(--secondary-text-color); /* Use theme variable */
   font-size: 0.9em;
 }
 
@@ -209,14 +196,14 @@ a:hover {
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
+  /* Inherits background/color/base border from theme.css */
   width: 100%;
   padding: 10px;
   margin-bottom: 1rem;
-  border: 1px solid #ced4da; /* Standard input border color */
   border-radius: 4px;
   font-size: 1em;
   transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition for focus */
-}
+} /* Removed explicit border color, uses var(--input-border-color) from theme.css */
 
 .contact-form input[type="text"]:focus,
 .contact-form input[type="email"]:focus,
@@ -231,8 +218,8 @@ a:hover {
 }
 
 .contact-form button {
-  background-color: var(--secondary-color);
-  color: white;
+  background-color: var(--button-bg); /* Use theme variable */
+  color: var(--button-text); /* Use theme variable */
   border: none;
   padding: 12px 25px;
   border-radius: 5px;
@@ -243,6 +230,6 @@ a:hover {
 }
 
 .contact-form button:hover {
-  background-color: var(--secondary-hover);
+  /* Hover handled by button:hover in theme.css (border color change) */
   transform: translateY(-2px); /* Slight lift on hover */
 }
