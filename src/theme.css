@@ -9,6 +9,7 @@
   --secondary-text-color: #6c757d; /* Muted text */
   --section-bg: #ffffff; /* Sections have same bg as body */
   --shadow-color: rgba(0, 0, 0, 0.08);
+  --section-hover-bg: #f8f9fa; /* Slightly off-white for hover */
   --input-border-color: #ced4da;
   --input-focus-border-color: #86b7fe; /* Lighter blue for focus */
   --toggle-bg: #eee;
@@ -25,6 +26,7 @@
   --secondary-text-color: #adb5bd; /* Lighter muted text */
   --section-bg: #212529; /* Slightly lighter than body bg */
   --shadow-color: rgba(255, 255, 255, 0.08);
+  --section-hover-bg: #2c3034; /* Slightly lighter than section bg for hover */
   --input-border-color: #495057;
   --input-focus-border-color: #61dafb; /* Use primary color for focus */
   --toggle-bg: #444;

@@ -1,0 +1,52 @@
+.skills-section {
+  /* Uses variables defined in theme.css or App.css */
+  background-color: var(--background-alt);
+  color: var(--text-primary);
+  text-align: center;
+}
+
+/* Consistent padding defined in App.css */
+/* .section-padding { padding: 4rem 2rem; } */
+/* .section-title { margin-bottom: 3rem; font-size: 2.5rem; } */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid */
+  gap: 1.5rem; /* Spacing between cards */
+  max-width: 900px; /* Limit max width */
+  margin: 0 auto; /* Center the grid */
+  padding: 0 1rem; /* Padding on smaller screens */
+}
+
+.skill-card {
+  background-color: var(--background-card); /* Use card background variable */
+  color: var(--text-secondary); /* Use secondary text color */
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animation transition */
+  display: flex;
+  flex-direction: column; /* Stack icon (if added) and name */
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px) scale(1.03); /* Lift and slightly enlarge on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+  cursor: default; /* Indicate it's not clickable (unless you add links) */
+}
+
+.skill-name {
+  margin-top: 0.5rem; /* Space between icon (if added) and name */
+  font-size: 0.95rem;
+}
+
+/* Optional: Add styles for skill icons if you implement them */
+/*
+.skill-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color); // Or specific colors per skill
+}
+*/

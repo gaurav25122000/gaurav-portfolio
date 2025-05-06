@@ -1,6 +1,6 @@
 /* Basic Reset / Defaults */
 /* Body styles are now primarily controlled by theme.css */
-/* body {
+body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Use system fonts */
   -webkit-font-smoothing: antialiased;
@@ -8,7 +8,7 @@
   line-height: 1.6;
   background-color: var(--background-color); /* Use theme variable */
   color: var(--text-color); /* Use theme variable */
-} */
+} 
 
 *,
 *::before,
@@ -37,14 +37,20 @@
 
 /* General Section Styling */
 .section {
-  background-color: var(--section-bg); /* Use theme variable */
+  background-color: var(--section-bg); /* Reintroduce section background */
   padding: 2rem;
   margin-bottom: 2rem; /* Space between sections */
-  border-radius: 8px; /* Slightly rounded corners */
-  box-shadow: 0 4px 12px var(--shadow-color); /* Softer shadow */
+  border-radius: 12px; /* Add rounded corners */
+  box-shadow: 0 5px 15px var(--shadow-color); /* Add subtle shadow */
   opacity: 0; /* Start hidden for animation */
   animation: fadeIn 0.7s ease-out forwards; /* Apply fade-in animation */
   /* Add delay for staggered effect if desired, e.g., using nth-child or JS */
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Add transitions for hover */
+}
+
+.section:hover {
+  transform: translateY(-4px); /* Lift section slightly on hover */
+  box-shadow: 0 8px 20px var(--shadow-color); /* Enhance shadow on hover */
 }
 
 .section h2 {
@@ -138,11 +144,22 @@ a:hover {
 .job {
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-color); /* Separator line between jobs */
+  /* border-bottom: 1px solid var(--border-color); */ /* Separator line between jobs - remove if section bg provides enough separation */
+  border-radius: 6px; /* Removed */
+  padding: 1.5rem; /* Keep default section padding, remove specific job padding */
+  margin-left: -1.5rem; /* Removed */
+  margin-right: -1.5rem; /* Removed */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+} /* Keep job-specific transitions if needed, otherwise remove */
+
+.job:hover {
+  transform: translateY(-4px); 
+  box-shadow: 0 6px 15px var(--shadow-color); /* Removed hover effect */
+  background-color: var(--section-hover-bg); 
 }
 
 .job:last-child {
-  border-bottom: none; /* Remove border from the last job */
+  /* border-bottom: none; */ /* Remove if border-bottom above is removed */
   margin-bottom: 0;
   padding-bottom: 0;
 }
