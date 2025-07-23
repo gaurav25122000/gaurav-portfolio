@@ -1,4 +1,5 @@
 import React from 'react';
+import './EducationPage.css';
 
 function Education() {
   return (

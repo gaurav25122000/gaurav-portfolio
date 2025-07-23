@@ -1,4 +1,5 @@
 import React from 'react';
+import './PublicationsPage.css';
 
 function Publications() {
   return (
