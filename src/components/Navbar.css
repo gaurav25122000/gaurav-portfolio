@@ -1,49 +1,59 @@
-/* Navbar Styling */
 .navbar {
-  background-color: var(--section-bg); /* Use section background for navbar */
-  color: var(--text-color);
-  padding: 0.8rem 2rem;
-  box-shadow: 0 2px 8px var(--shadow-color);
-  position: sticky; /* Make it stick to the top */
+  background-color: var(--card-background);
+  box-shadow: var(--shadow);
+  padding: 1rem 2rem;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* Ensure it spans the full width */
-  z-index: 100; /* Keep it above other content */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  right: 0;
+  z-index: 1000;
+  transition: background-color var(--transition-speed);
 }
 
 .navbar-container {
   display: flex;
-  justify-content: space-between; /* Space out logo/name and links */
+  justify-content: space-between;
   align-items: center;
-  max-width: 1100px; /* Max width similar to content */
-  margin: 0 auto; /* Center the content */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .navbar-logo {
-  color: var(--primary-color);
   font-size: 1.5rem;
   font-weight: bold;
-  text-decoration: none;
+  color: var(--primary-color);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem; /* Spacing between links */
-  margin: 0;
-  padding: 0;
+  gap: 1.5rem;
 }
 
 .nav-links a {
   color: var(--text-color);
-  text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  position: relative;
+  transition: color var(--transition-speed);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width var(--transition-speed);
 }
 
 .nav-links a:hover,
-.nav-links a.active { /* Add an 'active' class via JS/Router for the current section */
+.nav-links a.active {
   color: var(--primary-color);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
 }

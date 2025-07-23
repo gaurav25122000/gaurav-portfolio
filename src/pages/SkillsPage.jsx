@@ -1,4 +1,5 @@
 import React from 'react';
+import './Skills.css';
 import './Skills.css'; // We'll create this CSS file next
 
 // Sample skills data - replace with your actual skills

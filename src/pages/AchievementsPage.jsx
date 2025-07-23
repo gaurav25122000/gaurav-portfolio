@@ -1,4 +1,5 @@
 import React from 'react';
+import './AchievementsPage.css';
 
 function Achievements() {
   return (

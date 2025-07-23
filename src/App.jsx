@@ -1,40 +1,42 @@
 import React from 'react';
-import ThemeSwitcher from './components/ThemeSwitcher'; // Import the switcher
-import Home from './components/Home';
-import About from './components/About';
-import Experience from './components/Experience';
-import Skills from './components/Skills'; // Import the new Skills component
-import Projects from './components/Projects';
-import Publications from './components/Publications';
-import Achievements from './components/Achievements';
-import SocialWork from './components/SocialWork';
-import Education from './components/Education';
-import Contact from './components/Contact';
-import './App.css'
-import Navbar from './components/Navbar'; // Import the Navbar
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ThemeSwitcher from './components/ThemeSwitcher';
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ExperiencePage from './pages/ExperiencePage';
+import SkillsPage from './pages/SkillsPage';
+import ProjectsPage from './pages/ProjectsPage';
+import PublicationsPage from './pages/PublicationsPage';
+import AchievementsPage from './pages/AchievementsPage';
+import SocialWorkPage from './pages/SocialWorkPage';
+import EducationPage from './pages/EducationPage';
+import ContactPage from './pages/ContactPage';
+import './App.css';
 
 function App() {
   return (
-    <div className="portfolio-container">
-            <ThemeSwitcher /> {/* Add the switcher component */}
-      <Navbar/>
-      {/* You might want a Navbar component here later */}
-      <main>
-        <Home />
-        <About />
-        <Experience />
-        <Skills /> {/* Add the Skills section */}
-        <Projects />
-        <Publications />
-        <Achievements />
-        <SocialWork />
-        <Education />
-        <Contact />
-      </main>
-      {/* You might want a Footer component here later */}
-    </div>
-  )
+    <Router>
+      <div className="portfolio-container">
+        <ThemeSwitcher />
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/experience" element={<ExperiencePage />} />
+            <Route path="/skills" element={<SkillsPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/publications" element={<PublicationsPage />} />
+            <Route path="/achievements" element={<AchievementsPage />} />
+            <Route path="/social-work" element={<SocialWorkPage />} />
+            <Route path="/education" element={<EducationPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

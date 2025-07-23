@@ -1,30 +1,33 @@
 import React from 'react';
-import './Navbar.css'; // Import the CSS we created
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar = () => {
-  // For now, let's use placeholder links.
-  // Later, these can be updated to scroll to sections or use a router.
   const navItems = [
-    { id: 'home', label: 'Home', href: '#hero' }, // Assuming you have a hero/top section
-    { id: 'about', label: 'About', href: '#about' },
-    { id: 'experience', label: 'Experience', href: '#experience' },
-    { id: 'projects', label: 'Projects', href: '#projects' },
-    { id: 'skills', label: 'Skills', href: '#skills' },
-    { id: 'contact', label: 'Contact', href: '#contact' },
+    { id: 'home', label: 'Home', to: '/' },
+    { id: 'about', label: 'About', to: '/about' },
+    { id: 'experience', label: 'Experience', to: '/experience' },
+    { id: 'skills', label: 'Skills', to: '/skills' },
+    { id: 'projects', label: 'Projects', to: '/projects' },
+    { id: 'publications', label: 'Publications', to: '/publications' },
+    { id: 'achievements', label: 'Achievements', to: '/achievements' },
+    { id: 'social-work', label: 'Social Work', to: '/social-work' },
+    { id: 'education', label: 'Education', to: '/education' },
+    { id: 'contact', label: 'Contact', to: '/contact' },
   ];
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <a href="#hero" className="navbar-logo">
-          Gaurav Narula {/* Or your name/logo text */}
-        </a>
+        <Link to="/" className="navbar-logo">
+          Gaurav Narula
+        </Link>
         <ul className="nav-links">
           {navItems.map(item => (
             <li key={item.id}>
-              <a href={item.href}>
+              <Link to={item.to}>
                 {item.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
