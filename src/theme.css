@@ -1,84 +1,94 @@
-/* Default Light Theme Variables */
 :root {
-  --background-color: #ffffff;
-  --text-color: #333333;
-  --primary-color: #007bff;
-  --border-color: #dddddd;
-  --button-bg: #f8f9fa;
-  --button-text: #333333;
-  --secondary-text-color: #6c757d; /* Muted text */
-  --section-bg: #ffffff; /* Sections have same bg as body */
-  --shadow-color: rgba(0, 0, 0, 0.08);
-  --section-hover-bg: #f8f9fa; /* Slightly off-white for hover */
-  --input-border-color: #ced4da;
-  --input-focus-border-color: #86b7fe; /* Lighter blue for focus */
-  --toggle-bg: #eee;
+  --primary-color: #6a1b9a;
+  --secondary-color: #ab47bc;
+  --background-color: #f3e5f5;
+  --text-color: #333;
+  --card-background: #fff;
+  --shadow: 0 4px 8px rgba(0,0,0,0.1);
+  --transition-speed: 0.3s;
 }
 
-/* Dark Theme Variables */
 [data-theme='dark'] {
-  --background-color: #1a1a1a;
-  --text-color: #f8f9fa;
-  --primary-color: #61dafb; /* Example: Lighter blue for dark mode */
-  --border-color: #444444;
-  --button-bg: #333333;
-  --button-text: #f8f9fa;
-  --secondary-text-color: #adb5bd; /* Lighter muted text */
-  --section-bg: #212529; /* Slightly lighter than body bg */
-  --shadow-color: rgba(255, 255, 255, 0.08);
-  --section-hover-bg: #2c3034; /* Slightly lighter than section bg for hover */
-  --input-border-color: #495057;
-  --input-focus-border-color: #61dafb; /* Use primary color for focus */
-  --toggle-bg: #444;
+  --primary-color: #8e24aa;
+  --secondary-color: #ba68c8;
+  --background-color: #121212;
+  --text-color: #eee;
+  --card-background: #1e1e1e;
 }
 
-/* Apply base styles using variables */
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
-/* Example usage on other elements */
-button {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: 1px solid var(--border-color);
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  transition: border-color 0.25s, background-color 0.3s ease, color 0.3s ease;
-  border-radius: 8px;
+.section {
+  padding: 4rem 2rem;
+  border-bottom: 1px solid var(--secondary-color);
+  transition: transform var(--transition-speed);
 }
 
-button:hover {
-  border-color: var(--primary-color);
+.section:hover {
+  transform: translateY(-5px);
 }
 
-a {
+h1, h2, h3 {
   color: var(--primary-color);
 }
 
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
 }
 
-/* Input base styles (can be overridden in specific components) */
+a:hover {
+  color: var(--primary-color);
+}
+
+.card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
 input, textarea {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  border: 1px solid var(--input-border-color);
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    background-color: var(--card-background);
+    color: var(--text-color);
 }
