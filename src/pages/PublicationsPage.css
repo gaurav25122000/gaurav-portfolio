@@ -1,41 +1,39 @@
-.publication-list {
-  list-style: none;
-  padding: 0;
+.publications-section {
+  padding: 4rem 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+.publications-list {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .publication-item {
   background-color: var(--card-background);
   border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding: 2rem;
   box-shadow: var(--shadow);
-  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .publication-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
 }
 
 .publication-item h3 {
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
-.publication-item p {
-  margin-bottom: 1rem;
+.publication-meta {
+  font-style: italic;
+  color: var(--secondary-color);
 }
-
-.publication-item a {
-  font-weight: bold;
-}
-
-.publication-item {
-  opacity: 0;
-  animation: fadeIn 0.5s ease-out forwards;
-}
-
-.publication-list li:nth-child(1) { animation-delay: 0.1s; }
-.publication-list li:nth-child(2) { animation-delay: 0.2s; }
-.publication-list li:nth-child(3) { animation-delay: 0.3s; }
-.publication-list li:nth-child(4) { animation-delay: 0.4s; }
-.publication-list li:nth-child(5) { animation-delay: 0.5s; }

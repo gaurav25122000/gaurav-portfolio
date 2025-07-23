@@ -1,21 +1,38 @@
 import React from 'react';
 import './ProjectsPage.css';
 
-function Projects() {
+const projects = [
+  {
+    title: 'AI-Powered Launchpad',
+    description: 'Won Intra Office AI Powered Launchpad competition.',
+    technologies: ['AI', 'Python'],
+  },
+  {
+    title: 'Innovation Express \'21',
+    description: 'Recognised as one of the top 10 innovators in "Innovation Express\'21" by TOI.',
+    technologies: ['Innovation'],
+  }
+];
+
+function ProjectsPage() {
   return (
     <section id="projects" className="section projects-section">
-      <h2>Projects</h2>
-      <p>This section showcases personal projects or significant contributions to open-source projects.</p>
-      {/* Add your projects here */}
-      <div className="project">
-        <h3>Project Name Placeholder</h3>
-        <p>Brief description of the project and your role.</p>
-        <p><strong>Technologies Used:</strong> Tech 1, Tech 2, Tech 3</p>
-        {/* <a href="link-to-github-repo" target="_blank" rel="noopener noreferrer">View on GitHub</a> */}
+      <h2 className="section-title">Projects & Achievements</h2>
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <div key={index} className="project-card">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <div className="project-technologies">
+              {project.technologies.map((tech, i) => (
+                <span key={i} className="tech-tag">{tech}</span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-      {/* Repeat the div.project structure for each project */}
     </section>
   );
 }
 
-export default Projects;
+export default ProjectsPage;

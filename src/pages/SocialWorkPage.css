@@ -1,27 +1,46 @@
 .social-work-section {
-  max-width: 800px;
+  padding: 4rem 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+.social-work-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.social-work-item {
-  margin-bottom: 2rem;
+.social-work-card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.social-work-item h3 {
-  border-left: 4px solid var(--primary-color);
-  padding-left: 1rem;
+.social-work-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.social-work-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.social-work-card h4 {
+  color: var(--secondary-color);
   margin-bottom: 1rem;
+  font-style: italic;
 }
 
-.social-work-item p {
-  line-height: 1.7;
+.social-work-card ul {
+  padding-left: 1.5rem;
 }
-
-.social-work-item {
-  opacity: 0;
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-.social-work-section div:nth-child(1) { animation-delay: 0.2s; }
-.social-work-section div:nth-child(2) { animation-delay: 0.4s; }
-.social-work-section div:nth-child(3) { animation-delay: 0.6s; }

@@ -1,27 +1,44 @@
 import React from 'react';
 import './SocialWorkPage.css';
 
-function SocialWork() {
+const socialWork = [
+  {
+    organization: 'Kind Beings',
+    role: 'Volunteer',
+    description: [
+      'Boosted the organisation\'s outreach by increasing Instagram followers by 50% and conducting multiple donation drives for the needy',
+      'Effectively managed a volunteer team of 12 and over 20 underprivileged children',
+      'Successfully organised various events for the children and informative sessions to promote awareness',
+    ],
+  },
+  {
+    organization: 'BVCOE-NSS',
+    role: 'Volunteer',
+    description: [
+      'Undertook various programmes regarding social awareness in the adopted villages, college/school campuses and urban slums',
+    ],
+  },
+];
+
+function SocialWorkPage() {
   return (
     <section id="social-work" className="section social-work-section">
-      <h2>Social Work & Volunteering</h2>
-      <div className="volunteer-role">
-        <h3>Kind Beings</h3>
-        <ul>
-          <li>Significantly increased Instagram follower engagement through targeted campaigns.</li>
-          <li>Successfully conducted multiple donation drives for essential supplies.</li>
-          <li>Managed and coordinated teams of volunteers for various initiatives.</li>
-          <li>Organized community events to raise awareness and support.</li>
-        </ul>
-      </div>
-      <div className="volunteer-role">
-        <h3>BVCOE-NSS (National Service Scheme)</h3>
-        <ul>
-          <li>Participated in and helped organize social awareness programs within the community.</li>
-        </ul>
+      <h2 className="section-title">Social Work</h2>
+      <div className="social-work-container">
+        {socialWork.map((item, index) => (
+          <div key={index} className="social-work-card">
+            <h3>{item.organization}</h3>
+            <h4>{item.role}</h4>
+            <ul>
+              {item.description.map((desc, i) => (
+                <li key={i}>{desc}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   );
 }
 
-export default SocialWork;
+export default SocialWorkPage;
