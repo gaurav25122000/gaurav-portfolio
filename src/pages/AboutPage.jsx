@@ -4,13 +4,12 @@ import './AboutPage.css';
 function About() {
   return (
     <section id="about" className="section about-section">
-      <h2>About Me</h2>
-      {/* Consider adding a professional headshot here */}
-      {/* <img src="/path/to/your/photo.jpg" alt="Gaurav Narula" className="profile-photo"/> */}
-      <p>
-        {/* Expand on your summary here - career goals, work ethic, passion for backend */}
-        Driven by a curiosity for how systems work and a desire to build robust, scalable solutions. I thrive on tackling complex backend challenges and enjoy collaborating with teams to bring efficient software to life. My goal is to continuously learn and contribute to impactful projects in the tech industry.
-      </p>
+      <div className="about-content">
+        <h2 className="section-title">About Me</h2>
+        <p className="about-text">
+          Highly skilled Software Developer II with 3+ years of experience in backend system development, specialising in architecting microservices and optimising APIs for enhanced performance. Proven ability to lead projects, implement AI-powered solutions, and significantly improve client onboarding efficiency. Proficient in Python, SQL, MongoDB, and AWS, with a strong foundation in microservice architecture.
+        </p>
+      </div>
     </section>
   );
 }

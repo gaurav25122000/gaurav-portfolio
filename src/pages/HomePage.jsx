@@ -4,11 +4,18 @@ import './HomePage.css';
 function Home() {
   return (
     <section id="home" className="section home-section">
-      <h1>Backend Developer with a Passion for Efficient Systems</h1>
-      <p>Passionate software engineer with 1+ years of experience in developing backend systems. Skilled at writing clean, maintainable, and well-documented code, and adept at troubleshooting complex issues. Proven ability to work effectively in team environments to deliver high-quality software solutions.</p>
-      {/* You might want to link these buttons later */}
-      <button className="cta-button">View My Work</button>
-      <button className="cta-button">Contact Me</button>
+      <div className="home-content">
+        <h1 className="home-title">Gaurav Narula</h1>
+        <p className="home-subtitle">Software Developer II</p>
+        <p className="home-location">Delhi, India</p>
+        <div className="home-contact">
+          <a href="mailto:gaurav25narula@gmail.com">gaurav25narula@gmail.com</a>
+          <span> | </span>
+          <a href="tel:+919811107628">+(91) 9811107628</a>
+          <span> | </span>
+          <a href="https://www.linkedin.com/in/gaurav-narula-5b3a32201/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
     </section>
   );
 }

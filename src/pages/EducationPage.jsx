@@ -1,15 +1,18 @@
 import React from 'react';
 import './EducationPage.css';
 
-function Education() {
+function EducationPage() {
   return (
     <section id="education" className="section education-section">
-      <h2>Education</h2>
-      <p><strong>Bachelor of Technology (B.Tech), Computer Science Engineering</strong></p>
-      <p>Bharati Vidyapeeth's College of Engineering, New Delhi</p>
-      <p>CGPA: 9.4 / 10.0</p>
+      <h2 className="section-title">Education</h2>
+      <div className="education-card">
+        <h3>Bachelor of Technology - Computer Science Engineering</h3>
+        <p className="institution">Bharati Vidyapeeth's College of Engineering</p>
+        <p className="cgpa">CGPA - 9.4/10</p>
+        <p className="duration">2018 - 2022</p>
+      </div>
     </section>
   );
 }
 
-export default Education;
+export default EducationPage;

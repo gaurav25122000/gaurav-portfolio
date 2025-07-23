@@ -1,56 +1,42 @@
-.hero-section {
+.home-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 4rem 2rem;
+  height: calc(100vh - 60px); /* Full viewport height minus navbar */
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
-  border-radius: 8px;
 }
 
-.hero-section h1 {
-  font-size: 3rem;
+.home-content {
+  animation: slideIn 1s ease-in-out;
+}
+
+.home-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.home-subtitle {
+  font-size: 2rem;
   margin-bottom: 1rem;
   color: white;
 }
 
-.hero-section p {
+.home-location {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  color: white;
 }
 
-.hero-section .btn {
-  background-color: white;
-  color: var(--primary-color);
-  padding: 0.8rem 2rem;
-  border-radius: 50px;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition: background-color 0.3s, color 0.3s;
+.home-contact a {
+  color: white;
+  margin: 0 0.5rem;
+  font-size: 1.1rem;
 }
 
-.hero-section .btn:hover {
-  background-color: var(--background-color);
-  color: var(--primary-color);
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-section h1, .hero-section p, .hero-section .btn {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.hero-section p {
-  animation-delay: 0.2s;
-}
-
-.hero-section .btn {
-  animation-delay: 0.4s;
+.home-contact a:hover {
+  text-decoration: underline;
 }

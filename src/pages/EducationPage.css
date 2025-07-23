@@ -1,36 +1,47 @@
 .education-section {
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
-.education-item {
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+.education-card {
   background-color: var(--card-background);
   border-radius: 8px;
   padding: 2rem;
-  margin-bottom: 1.5rem;
   box-shadow: var(--shadow);
-  border-left: 5px solid var(--primary-color);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.education-item h3 {
+.education-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.education-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.institution {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
   margin-bottom: 0.5rem;
 }
 
-.education-item p {
-  margin-bottom: 0.25rem;
+.cgpa {
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
-.education-item .date {
-  font-style: italic;
-  color: var(--secondary-color);
+.duration {
+  font-size: 1rem;
+  color: #888;
 }
-
-.education-item {
-  opacity: 0;
-  transform: translateX(-100px);
-  animation: slideIn 0.5s ease-out forwards;
-}
-
-.education-section div:nth-child(1) { animation-delay: 0.2s; }
-.education-section div:nth-child(2) { animation-delay: 0.4s; }
-.education-section div:nth-child(3) { animation-delay: 0.6s; }
